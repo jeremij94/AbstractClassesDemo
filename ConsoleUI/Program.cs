@@ -32,22 +32,75 @@ namespace ConsoleUI
             */
 
             // Create a list of Vehicle called vehicles
-
+            
             /*
              * Create 4 instances: 1 Car, 1 Motorcycle, and then 2 instances of type Vehicle (use explicit typing) but use constuctors from derived classes
              * - new it up as one of each derived class
              * Set the properties with object initializer syntax
              */
 
+            var firstCar = new Car()
+            {
+                Year = "2019",
+                Make = "Toyota",
+                Model = "Camry",
+                HasTrunk = true
+            };
+
+            var bike = new Motorcycle()
+            {
+                Year = "2022",
+                Make = "Ducati",
+                Model = "XDiavel Black Star",
+                HasSideCart = false
+            };
+
+
+            Vehicle newVehicle = new Car()
+            {
+                Year = "!970",
+                Make = "Chevrolet",
+                Model = "Chevelle SS",
+                HasTrunk = true
+            };
+
+            Vehicle otherVehicle = new Motorcycle()
+            {
+                Year = "2020",
+                Make = "Yamaha",
+                Model = "YZF-R6",
+                HasSideCart = false
+            };
+
             /*
              * Add the 4 vehicles to the list
              * Using a foreach loop iterate over each of the properties
              */
+            var vehicles = new List<Vehicle>()
+            {
+                firstCar,
+                bike,
+                newVehicle,
+                otherVehicle
+            };
+           
+
+            foreach (var vehicle in vehicles)
+            {
+                Console.WriteLine($"Year: {vehicle.Year}");
+                Console.WriteLine($"Make: {vehicle.Make}");
+                Console.WriteLine($"Model: {vehicle.Model}");
+                
+            }
 
             // Call each of the drive methods for one car and one motorcycle
+            firstCar.DriveAbstract();
+            bike.DriveAbstract();
 
-            #endregion            
-            Console.ReadLine();
+
+                #endregion
+                Console.ReadLine();
+            
         }
     }
 }
